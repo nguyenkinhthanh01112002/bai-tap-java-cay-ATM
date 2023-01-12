@@ -121,8 +121,18 @@ public class AtmCodeByJava {
                                 try{
                                 System.out.print("nhap vao so tien ban muon chuyen: ");
                                 long tienCanChuyen = Long.parseLong(sc.nextLine());
-                                cacChucNangAtm.chuyenTien(tienCanChuyen);
+                                if(nhanTienChuyenKhoan.getSoTaiKhoan().equals(soTaiKhoan)==true)
+                                {
+                                    System.out.println(""+nhanTienChuyenKhoan.toString());
+                                    cacChucNangAtm.chuyenTien(tienCanChuyen);
                                 }
+                                else
+                                {
+                                    System.out.println("so tai khoan ban vua nhap khong dung");
+                                    System.out.println("vui long chon so 3 neu ban muon thuc hien tiep giao dich");
+                                }
+                                }
+                                            
                                 catch(NumberFormatException e)
                                {
                                    check = false;

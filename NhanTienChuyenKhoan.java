@@ -19,7 +19,7 @@ public class NhanTienChuyenKhoan {
 
     @Override
     public String toString() {
-        return   soTaiKhoan + "\n" + thongTinCaNhan;
+        return    "........THONG TIN NGUOI NHAN TIEN......"+ "\n" + thongTinCaNhan;
     }
 
     public String getSoTaiKhoan() {

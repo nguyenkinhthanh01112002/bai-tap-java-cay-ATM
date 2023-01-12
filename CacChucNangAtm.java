@@ -49,14 +49,44 @@ public class CacChucNangAtm
     }
     public void chuyenTien(long soTienCanChuyen)
     {
+        boolean check;
         if(soTienCanChuyen%1000==0&&(this.theAtm.get(0).getSoTienKhaDung()>0))
         {
             if(soTienCanChuyen<=this.theAtm.get(0).getSoTienKhaDung())
             {
-                long tienCon = this.theAtm.get(0).getSoTienKhaDung()-soTienCanChuyen;
-                this.theAtm.get(0).setSoTienKhaDung(tienCon);
-                System.out.println(".....quy khach da thuc hien thanh cong giao dich......");
-                System.out.println("so du kha dung cua tai khoan sau khi thuc hien giao dich : "+this.theAtm.get(0).getSoTienKhaDung());
+                do
+                {
+                check = true;
+                System.out.println("vui long chon so 1 neu ban muon thuc hien giao dich hoac phim 0 de huy");
+                try
+                {
+                    int n = Integer.parseInt(sc.nextLine());
+                    if(n==1)
+                    {
+                        long tienCon = this.theAtm.get(0).getSoTienKhaDung()-soTienCanChuyen;
+                        this.theAtm.get(0).setSoTienKhaDung(tienCon);
+                        System.out.println(".....quy khach da thuc hien thanh cong giao dich......");
+                        System.out.println("so du kha dung cua tai khoan sau khi thuc hien giao dich : "+this.theAtm.get(0).getSoTienKhaDung());
+                    }
+                    else if(n==0)
+                    {
+                        System.out.println("cam on quy khach da su dung dich vu");
+                        return;
+                    }
+                    else
+                    {
+                        check=false;
+                        System.out.println("du lieu ban vua nhap khong hop le");
+                    }
+                }
+                catch(NumberFormatException e)
+                {
+                    check = false;
+                    System.out.println("du lieu ban vua nhap khong hop le");
+                }
+                }
+                while(check==false);
+                
             }
         }
         else
